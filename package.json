@@ -1,0 +1,12 @@
+{
+  "name": "signalprotocolimpbe",
+  "version": "1.0.0",
+  "description": "logic for signal protocol imp",
+  "license": "ISC",
+  "author": "sahil kumar",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
