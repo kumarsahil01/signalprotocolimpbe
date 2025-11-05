@@ -8,6 +8,7 @@ import userRoutes from './routes/userRoutes.js'
 import authRoutes from './routes/authRoutes.js'
 import keyRoutes from './routes/keyRoutes.js'
 import deviceRoutes from './routes/deviceRoutes.js'
+import messageRoutes from './routes/messageRoutes.js'
 
 dotenv.config();
 const app =express();
@@ -23,8 +24,8 @@ app.use('/api/users', userRoutes);
 app.use('/api/auth',authRoutes);
 app.use('/api/keys', keyRoutes);
 app.use('/api/devices',deviceRoutes)
+app.use("/api/messages", messageRoutes);
 
-// app.use('/api/messages', messageRoutes);
 
 
 app.get('/', (req, res) => {

@@ -1,3 +1,4 @@
+// src/models/message.js
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) => {
@@ -7,9 +8,16 @@ export default (sequelize) => {
     receiverId: { type: DataTypes.UUID, allowNull: false },
     ciphertext: { type: DataTypes.TEXT, allowNull: false },
     header: { type: DataTypes.JSONB },
-    deliveredAt: DataTypes.DATE,
-    readAt: DataTypes.DATE,
-    isDeleted: { type: DataTypes.BOOLEAN, defaultValue: false },
+    createdAt: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
+    deliveredAt: { type: DataTypes.DATE, allowNull: true },
+    readAt: { type: DataTypes.DATE, allowNull: true },
+    isDelivered: { type: DataTypes.BOOLEAN, defaultValue: false },
+    isRead: { type: DataTypes.BOOLEAN, defaultValue: false },
+    isDeleted: { type: DataTypes.BOOLEAN, defaultValue: false }
+  }, {
+    tableName: 'Messages',
+    timestamps: false, // if you use createdAt above; otherwise set true and remove createdAt field
   });
+
   return Message;
 };
